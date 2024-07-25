@@ -1,0 +1,11 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F1F6FC;
+    height: 100%;
+}
+
+.main {
+    flex: 1;
+}
