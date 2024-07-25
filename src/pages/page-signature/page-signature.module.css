@@ -1,0 +1,133 @@
+.signature {
+    padding: 62px 0;
+}
+
+.signature__widget {
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05);
+}
+
+.signature__widget+.signature__widget {
+    margin-top: 32px;
+}
+
+.signature__title {
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(68, 83, 113, 0.20);
+}
+
+.signature__title h1 {
+    margin: 0;
+    color: #0E1117;
+    font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.32px;
+}
+
+.signature__row {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.signature__picture {
+    width: 162px;
+    height: 162px;
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    padding: 4px;
+    box-shadow: 0px 6.5px 19.5px 6.5px rgba(0, 0, 0, 0.08);
+}
+
+.signature__avatar {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.signature__data {
+    flex: 1;
+}
+
+.signature__information {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+    row-gap: 16px;
+    column-gap: 20px;
+}
+
+
+.label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.label--column-2 {
+    grid-column: 2 / span 2;
+}
+
+.label--column-3 {
+    grid-column: 1 / span 3;
+}
+
+.text {
+    margin: 0;
+    color: #69758E;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.span {
+    position: relative;
+}
+
+.icon {
+    color: #b12933;
+    display: flex;
+    font-size: 22px;
+    left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+.label:hover .icon {
+    text-shadow: 2px 2px 2px #7f7f7f4d;
+}
+
+.input {
+    background-color: #fff;
+    border: 1px solid #2121211a;
+    border-radius: 8px;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    outline: none;
+    padding: 12px;
+    transition: border .3s, box-shadow .3s, color 0.3s;
+    width: 100%;
+}
+
+.input:focus {
+    color: #2E3A4C;
+}
+
+.label:hover .input {
+    border: 1px solid #21212126;
+    box-shadow: 0 4px 4px 0 #8e8dd01f;
+}
