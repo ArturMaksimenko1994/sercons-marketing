@@ -45,6 +45,7 @@ const PageSignature = () => {
     setInputAddress(event.target.value);
   };
 
+  
   return (
     <section className={styles.signature}>
       <div className="container">
