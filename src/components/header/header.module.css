@@ -1,0 +1,9 @@
+.header {
+    padding: 32px 0;
+    color: #303A4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 700;
+}
