@@ -21,7 +21,7 @@ export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inpu
       <TemplateOutlookSignature
         inputName={inputName}
         inputFamily={inputFamily}
-        inputPatronymic={inputPatronymic}
+        inputPatronymic={inputPatronymic}  
         inputPosition={inputPosition}
         inputTelephone={inputTelephone}
         inputTelephoneExt={inputTelephoneExt}
@@ -37,7 +37,7 @@ export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inpu
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Signature.html';
+    a.download = 'signature.htm';
     a.click();
     URL.revokeObjectURL(url);
   };
