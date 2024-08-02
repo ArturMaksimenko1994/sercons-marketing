@@ -1,17 +1,24 @@
 import { ChangeEvent, useState } from "react";
+import { useImage } from "../../utils/image-context";
 
 import styles from "./page-signature.module.css"
+
 import { OutlookSignature } from "./../../components/outlook-signature/outlook-signature"
+import OutlookAvatar from "./../../components/outlook/outlook-avatar/outlook-avatar"
 
 const PageSignature = () => {
-  const [inputName, setInputName] = useState('Артур');
-  const [inputFamily, setInputFamily] = useState('Максименко');
-  const [inputPatronymic, setInputPatronymic] = useState('Сергеевич');
-  const [inputPosition, setInputPosition] = useState('Программист');
-  const [inputTelephone, setInputTelephone] = useState('8 (985) 917-99-89');
-  const [inputTelephoneExt, setInputTelephoneExt] = useState('3325');
-  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('8 (985) 376-69-66');
-  const [inputAddress, setInputAddress] = useState('г. Москва, улица Шаболовка, 31Г');
+  const [inputName, setInputName] = useState('');
+  const [inputFamily, setInputFamily] = useState('');
+  const [inputPatronymic, setInputPatronymic] = useState('');
+  const [inputPosition, setInputPosition] = useState('');
+  const [inputTelephone, setInputTelephone] = useState('');
+  const [inputTelephoneExt, setInputTelephoneExt] = useState('');
+  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('');
+  const [inputAddress, setInputAddress] = useState('');
+  const { imageUrl, setImageUrl } = useImage();
+
+  const defaultImageUrl = "http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/hM7eXLZbzmQ.jpg";
+  const avatarUrl = imageUrl || defaultImageUrl;
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputName(event.target.value);
@@ -45,7 +52,10 @@ const PageSignature = () => {
     setInputAddress(event.target.value);
   };
 
-  
+  const handleFileUpload = (url: string) => {
+    setImageUrl(url); // Обновляем URL изображения в контексте
+  };
+
   return (
     <section className={styles.signature}>
       <div className="container">
@@ -55,12 +65,8 @@ const PageSignature = () => {
             <h1>Персональные данные</h1>
           </div>
           <div className={styles.signature__row}>
-            <div className={styles.signature__picture}>
-              <img className={styles.signature__avatar} src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/07/signature-avatar.png" alt="avatar" />
-            </div>
-
+            <OutlookAvatar onFileUpload={handleFileUpload} />
             <div className={styles.signature__data}>
-
               <div className={styles.signature__information}>
 
                 <label className={styles.label}>
@@ -180,7 +186,6 @@ const PageSignature = () => {
         </div>
 
         <div className={styles.signature__widget}>
-
           <OutlookSignature
             inputName={inputName}
             inputFamily={inputFamily}
@@ -190,9 +195,10 @@ const PageSignature = () => {
             inputTelephoneExt={inputTelephoneExt}
             inputTelephoneSecond={inputTelephoneSecond}
             inputAddress={inputAddress}
+            avatarUrl={avatarUrl}
           />
-
         </div>
+
       </div>
     </section>
   )

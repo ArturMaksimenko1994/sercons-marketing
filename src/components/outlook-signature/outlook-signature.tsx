@@ -11,9 +11,10 @@ interface IProps {
   inputTelephoneExt: string;
   inputTelephoneSecond: string;
   inputAddress: string;
+  avatarUrl: string;
 }
 
-export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress }: IProps) {
+export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress, avatarUrl }: IProps) {
   const [emailHTML, setEmailHTML] = useState('');
 
   useEffect(() => {
@@ -21,16 +22,17 @@ export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inpu
       <TemplateOutlookSignature
         inputName={inputName}
         inputFamily={inputFamily}
-        inputPatronymic={inputPatronymic}  
+        inputPatronymic={inputPatronymic}
         inputPosition={inputPosition}
         inputTelephone={inputTelephone}
         inputTelephoneExt={inputTelephoneExt}
         inputTelephoneSecond={inputTelephoneSecond}
         inputAddress={inputAddress}
+        avatarUrl={avatarUrl}
       />
     );
     setEmailHTML(html);
-  }, [inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress]);
+  }, [inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress, avatarUrl]);
 
   const handleDownload = () => {
     const blob = new Blob([emailHTML], { type: 'text/html' });
