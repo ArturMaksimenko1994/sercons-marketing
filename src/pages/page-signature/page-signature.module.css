@@ -36,15 +36,6 @@
     gap: 40px;
 }
 
-.signature__picture {
-    width: 162px;
-    height: 162px;
-    border-radius: 6px;
-    border: 1px solid #FFF;
-    padding: 4px;
-    box-shadow: 0px 6.5px 19.5px 6.5px rgba(0, 0, 0, 0.08);
-}
-
 .signature__avatar {
     width: 100%;
     display: block;
