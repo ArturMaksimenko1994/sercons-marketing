@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "./../../../utils/auth-context";
-import { BASE_URL } from "./../../../api/api-сonfig";
 import styles from "./outlook-avatar.module.css";
 
 // pintura
@@ -59,7 +58,6 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
         `}
       </style>
       <FilePond
-        instantUpload={false}
         files={files}
         //@ts-ignore
         onupdatefiles={setFiles}
@@ -83,7 +81,7 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
           }
         }}
         server={{
-          url: `${BASE_URL}/wp-json/wp/v2`,
+          url: 'http://www.signature.custom-wp.ru/wp-json/wp/v2',
           process: {
             url: '/media',
             method: 'POST',
@@ -118,7 +116,7 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
           imageWriter: [
             createDefaultImageWriter,
             {
-              outputFormat: 'image/png', // Устанавливаем формат PNG для сохранения
+              /* optional image writer options here */
             },
           ],
 
@@ -140,44 +138,6 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
               ...plugin_filter_locale_en_gb,
               ...plugin_annotate_locale_en_gb,
               ...markup_editor_locale_en_gb,
-            },
-            // Настройки обрезки
-            imageCropAspectRatio: 1, // Соотношение сторон 1:1 (квадрат)
-            willRenderCanvas: (shapes: any, state: any) => {
-              const {
-                utilVisibility,
-                selectionRect,
-                lineColor,
-                backgroundColor,
-              } = state;
-
-              // Exit if crop utils is not visible
-              if (utilVisibility.crop <= 0) return shapes;
-
-              // Get variable shortcuts to the crop selection rect
-              const { x, y, width, height } = selectionRect;
-
-              return {
-                // Copy all props from current shapes
-                ...shapes,
-
-                // Add an inverted ellipse shape for the circular mask
-                interfaceShapes: [
-                  {
-                    x: x + width * 0.5,
-                    y: y + height * 0.5,
-                    rx: width * 0.5,
-                    ry: height * 0.5,
-                    opacity: utilVisibility.crop,
-                    inverted: true,
-                    backgroundColor: [...backgroundColor, 0.5],
-                    strokeWidth: 1,
-                    strokeColor: [...lineColor],
-                  },
-                  // Spread all existing interface shapes onto the array
-                  ...(shapes as any).interfaceShapes || [],
-                ],
-              };
             },
           },
         }}
