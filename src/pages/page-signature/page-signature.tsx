@@ -3,18 +3,18 @@ import { useImage } from "../../utils/image-context";
 
 import styles from "./page-signature.module.css"
 
-import { OutlookSignature } from "./../../components/outlook-signature/outlook-signature"
-import OutlookAvatar from "./../../components/outlook/outlook-avatar/outlook-avatar"
+import OutlookAvatar from "./../../components/outlook/outlook-avatar/outlook-avatar";
+import OutlookSignatureAll from '../../components/outlook/outlook-signature-all/outlook-signature-all';
 
 const PageSignature = () => {
-  const [inputName, setInputName] = useState('');
-  const [inputFamily, setInputFamily] = useState('');
-  const [inputPatronymic, setInputPatronymic] = useState('');
-  const [inputPosition, setInputPosition] = useState('');
-  const [inputTelephone, setInputTelephone] = useState('');
-  const [inputTelephoneExt, setInputTelephoneExt] = useState('');
-  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('');
-  const [inputAddress, setInputAddress] = useState('');
+  const [inputName, setInputName] = useState('Артур');
+  const [inputFamily, setInputFamily] = useState('Максименко');
+  const [inputPatronymic, setInputPatronymic] = useState('Сергеевич');
+  const [inputPosition, setInputPosition] = useState('программист');
+  const [inputTelephone, setInputTelephone] = useState('8 (985) 917-99-89');
+  const [inputTelephoneExt, setInputTelephoneExt] = useState('4456');
+  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('12');
+  const [inputAddress, setInputAddress] = useState('Москва, Большой Строченовский переулок, 25А');
   const { imageUrl, setImageUrl } = useImage();
 
   const defaultImageUrl = "http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/hM7eXLZbzmQ.jpg";
@@ -185,20 +185,17 @@ const PageSignature = () => {
           </div>
         </div>
 
-        <div className={styles.signature__widget}>
-          <OutlookSignature
-            inputName={inputName}
-            inputFamily={inputFamily}
-            inputPatronymic={inputPatronymic}
-            inputPosition={inputPosition}
-            inputTelephone={inputTelephone}
-            inputTelephoneExt={inputTelephoneExt}
-            inputTelephoneSecond={inputTelephoneSecond}
-            inputAddress={inputAddress}
-            avatarUrl={avatarUrl}
-          />
-        </div>
-
+        <OutlookSignatureAll
+          inputName={inputName}
+          inputFamily={inputFamily}
+          inputPatronymic={inputPatronymic}
+          inputPosition={inputPosition}
+          inputTelephone={inputTelephone}
+          inputTelephoneExt={inputTelephoneExt}
+          inputTelephoneSecond={inputTelephoneSecond}
+          inputAddress={inputAddress}
+          avatarUrl={avatarUrl}
+        />
       </div>
     </section>
   )

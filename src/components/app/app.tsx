@@ -14,6 +14,7 @@ import PageSignature from '../../pages/page-signature/page-signature';
 import PageLogin from '../../pages/page-login/page-login';
 import PageNotFound from '../../pages/page-not-found/page-not-found';
 
+
 function App() {
   return (
     <AuthProvider>
@@ -22,7 +23,15 @@ function App() {
           <Header />
           <main className={styles.main}>
             <Routes>
-              <Route path="/" element={<PageHome />} />
+              <Route path="/333" element={<PageHome />} />
+              <Route
+                path="/"
+                element={
+                  <ProtectedRoute>
+                    <PageSignature />
+                  </ProtectedRoute>
+                }
+              />
               <Route
                 path="/signature"
                 element={
