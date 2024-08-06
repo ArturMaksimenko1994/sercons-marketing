@@ -8,10 +8,6 @@
     box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05);
 }
 
-.signature__widget+.signature__widget {
-    margin-top: 32px;
-}
-
 .signature__title {
     padding: 20px 40px;
     border-bottom: 1px solid rgba(68, 83, 113, 0.20);

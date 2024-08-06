@@ -1,25 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { TemplateOutlookSignature } from "../../templates/template-outlook-signature/template-outlook-signature";
+import { TemplateOutlookSignaturePromashtest } from "../../../templates/templates-outlook-signature/template-outlook-signature-promashtest";
 
-interface IProps {
-  inputName: string;
-  inputFamily: string;
-  inputPatronymic: string;
-  inputPosition: string;
-  inputTelephone: string;
-  inputTelephoneExt: string;
-  inputTelephoneSecond: string;
-  inputAddress: string;
-  avatarUrl: string;
-}
+import { ISignatureProps } from "./../../../utils/type";
 
-export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress, avatarUrl }: IProps) {
+export function OutlookSignaturePromashtest({ inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress, avatarUrl }: ISignatureProps) {
   const [emailHTML, setEmailHTML] = useState('');
 
   useEffect(() => {
     const html = renderToStaticMarkup(
-      <TemplateOutlookSignature
+      <TemplateOutlookSignaturePromashtest
         inputName={inputName}
         inputFamily={inputFamily}
         inputPatronymic={inputPatronymic}
@@ -39,7 +29,7 @@ export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inpu
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'signature.htm';
+    a.download = `signature.htm`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -47,7 +37,9 @@ export function OutlookSignature({ inputName, inputFamily, inputPatronymic, inpu
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: emailHTML }} />
-      <button onClick={handleDownload}>Скачать Signature</button>
+      <button className="btn-download" onClick={handleDownload}>
+        Скачать
+      </button>
     </>
   );
 }
