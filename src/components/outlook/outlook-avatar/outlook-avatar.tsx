@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./../../../utils/auth-context";
+import { BASE_URL } from "./../../../api/api-сonfig";
 import styles from "./outlook-avatar.module.css";
 
 // pintura
@@ -40,7 +41,11 @@ registerPlugin(FilePondPluginImageEditor, FilePondPluginFilePoster);
 // pintura
 setPlugins(plugin_crop, plugin_finetune, plugin_filter, plugin_annotate);
 
-export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: string) => void }) {
+export default function OutlookAvatar({
+  onFileUpload,
+}: {
+  onFileUpload: (url: string) => void;
+}) {
   const [files, setFiles] = useState([]);
   const { token } = useAuth();
 
@@ -58,6 +63,7 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
         `}
       </style>
       <FilePond
+        instantUpload={false}
         files={files}
         //@ts-ignore
         onupdatefiles={setFiles}
@@ -65,7 +71,7 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
         filePosterMaxHeight={256}
         onprocessfile={(error, file) => {
           if (error) {
-            console.error('Ошибка при загрузке файла:', error);
+            console.error("Ошибка при загрузке файла:", error);
             return;
           }
           try {
@@ -74,22 +80,22 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
             if (fileUrl) {
               onFileUpload(fileUrl);
             } else {
-              console.error('В ответе не найден исходный URL-адрес:', response);
+              console.error("В ответе не найден исходный URL-адрес:", response);
             }
           } catch (parseError) {
-            console.error('Ошибка при разборе файла ServerID:', parseError);
+            console.error("Ошибка при разборе файла ServerID:", parseError);
           }
         }}
         server={{
-          url: 'http://www.signature.custom-wp.ru/wp-json/wp/v2',
+          url: `${BASE_URL}/wp-json/wp/v2`,
           process: {
-            url: '/media',
-            method: 'POST',
+            url: "/media",
+            method: "POST",
             headers: {
-              Authorization: `Bearer ${token}`
+              Authorization: `Bearer ${token}`,
             },
             onload: (response) => {
-              console.log('Server response:', response);
+              console.log("Server response:", response);
               return response; // Возвращаем сырое значение serverId
             },
             onerror: (response) => response.data,
@@ -116,7 +122,43 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
           imageWriter: [
             createDefaultImageWriter,
             {
-              /* optional image writer options here */
+              outputFormat: "image/png", // Устанавливаем формат PNG для сохранения
+
+              targetSize: {
+                width: 256,
+                height: 256,
+              },
+              // Convert to PNG so masked area is transparent
+              mimeType: "image/png",
+
+              // Run custom processing on the image data
+              postprocessImageData: (imageData: any) =>
+                new Promise((resolve) => {
+                  // Create a canvas element to handle the imageData
+                  const canvas = document.createElement("canvas");
+                  canvas.width = imageData.width;
+                  canvas.height = imageData.height;
+                  const ctx = canvas.getContext("2d")!;
+                  ctx.putImageData(imageData, 0, 0);
+
+                  // Only draw image where we render our circular mask
+                  ctx.globalCompositeOperation = "destination-in";
+
+                  // Draw our circular mask
+                  ctx.fillStyle = "black";
+                  ctx.beginPath();
+                  ctx.arc(
+                    imageData.width * 0.5,
+                    imageData.height * 0.5,
+                    imageData.width * 0.5,
+                    0,
+                    2 * Math.PI
+                  );
+                  ctx.fill();
+
+                  // Returns the modified imageData
+                  resolve(ctx.getImageData(0, 0, canvas.width, canvas.height));
+                }),
             },
           ],
 
@@ -138,6 +180,44 @@ export default function OutlookAvatar({ onFileUpload }: { onFileUpload: (url: st
               ...plugin_filter_locale_en_gb,
               ...plugin_annotate_locale_en_gb,
               ...markup_editor_locale_en_gb,
+            },
+            // Настройки обрезки
+            imageCropAspectRatio: 1, // Соотношение сторон 1:1 (квадрат)
+            willRenderCanvas: (shapes: any, state: any) => {
+              const {
+                utilVisibility,
+                selectionRect,
+                lineColor,
+                backgroundColor,
+              } = state;
+
+              // Exit if crop utils is not visible
+              if (utilVisibility.crop <= 0) return shapes;
+
+              // Get variable shortcuts to the crop selection rect
+              const { x, y, width, height } = selectionRect;
+
+              return {
+                // Copy all props from current shapes
+                ...shapes,
+
+                // Add an inverted ellipse shape for the circular mask
+                interfaceShapes: [
+                  {
+                    x: x + width * 0.5,
+                    y: y + height * 0.5,
+                    rx: width * 0.5,
+                    ry: height * 0.5,
+                    opacity: utilVisibility.crop,
+                    inverted: true,
+                    backgroundColor: [...backgroundColor, 0.5],
+                    strokeWidth: 1,
+                    strokeColor: [...lineColor],
+                  },
+                  // Spread all existing interface shapes onto the array
+                  ...((shapes as any).interfaceShapes || []),
+                ],
+              };
             },
           },
         }}
