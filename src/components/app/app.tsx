@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './../protected-route/protected-route';
 import { AuthProvider } from './../../utils/auth-context';
 import { ImageProvider } from './../../utils/image-context';
@@ -23,15 +23,7 @@ function App() {
           <Header />
           <main className={styles.main}>
             <Routes>
-              <Route
-                path="/sercons-marketing"
-                element={
-                  <ProtectedRoute>
-                    <PageSignature />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
+            <Route
                 path="/"
                 element={
                   <ProtectedRoute>

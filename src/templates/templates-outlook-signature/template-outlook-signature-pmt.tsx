@@ -104,16 +104,16 @@ export function TemplateOutlookSignaturePmt({ inputName, inputFamily, inputPatro
                       </Link>
                     </Column>
                   </Row>
-                  {/* <Row style={{ paddingTop: "70px" }}>
+                  <Row style={{ paddingTop: "70px" }}>
                     <Column align='right' >
-                      <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/link-icon-serconsmed.png" alt="telephone" width="20" height="24" />
+                      {/* <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/link-icon-serconsmed.png" alt="telephone" width="20" height="24" /> */}
                     </Column>
                   </Row>
                   <Row>
                     <Column align='right'>
-                      <Link href="https://serconsmed.com/" style={{ color: "#444", fontSize: "14px", fontWeight: "700", textDecoration: "underline", fontFamily: "'Arial', sans-serif" }}>serconsmed.com</Link>
+                      {/* <Link href="https://serconsmed.com/" style={{ color: "#444", fontSize: "14px", fontWeight: "700", textDecoration: "underline", fontFamily: "'Arial', sans-serif" }}>serconsmed.com</Link> */}
                     </Column>
-                  </Row> */}
+                  </Row>
                 </Column>
                 <Column style={{ width: "15px" }}></Column>
                 <Column width="10" style={{ backgroundColor: "#0F173E" }}></Column>
