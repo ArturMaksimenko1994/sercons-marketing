@@ -23,7 +23,14 @@ function App() {
           <Header />
           <main className={styles.main}>
             <Routes>
-              <Route path="/333" element={<PageHome />} />
+              <Route
+                path="/sercons-marketing"
+                element={
+                  <ProtectedRoute>
+                    <PageSignature />
+                  </ProtectedRoute>
+                }
+              />
               <Route
                 path="/"
                 element={
