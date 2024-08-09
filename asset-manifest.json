@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6562a430.css",
+    "main.js": "/static/js/main.617d3187.js",
+    "static/js/453.0739a952.chunk.js": "/static/js/453.0739a952.chunk.js",
+    "static/media/Roboto-Bold.svg": "/static/media/Roboto-Bold.e77a353e61f53a5029e8.svg",
+    "static/media/Roboto-Medium.svg": "/static/media/Roboto-Medium.f90d1b11d49378e61bdf.svg",
+    "static/media/Roboto-Regular.svg": "/static/media/Roboto-Regular.51f9d394d0d71467a7bc.svg",
+    "static/media/Roboto-Medium.eot": "/static/media/Roboto-Medium.d5ca00ca952ac5335462.eot",
+    "static/media/Roboto-Medium.ttf": "/static/media/Roboto-Medium.252d573773883a06058e.ttf",
+    "static/media/Roboto-Regular.eot": "/static/media/Roboto-Regular.d5b3b79380cbe9a83614.eot",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.cde4d884bb1b84a540f2.ttf",
+    "static/media/Roboto-Bold.eot": "/static/media/Roboto-Bold.1ad26a6c83b46955292a.eot",
+    "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.915a4068c3d28e069c79.ttf",
+    "static/media/Roboto-Medium.woff": "/static/media/Roboto-Medium.952ab5a0231c9f9dfcf0.woff",
+    "static/media/Roboto-Bold.woff": "/static/media/Roboto-Bold.3fa5ceb7c1e9b1215d0c.woff",
+    "static/media/Roboto-Regular.woff": "/static/media/Roboto-Regular.f337b8880ca3d4b5b874.woff",
+    "static/media/Roboto-Medium.woff2": "/static/media/Roboto-Medium.5188cc52c44a46ec389a.woff2",
+    "static/media/Roboto-Bold.woff2": "/static/media/Roboto-Bold.0f53c89e290dfbbae43f.woff2",
+    "static/media/Roboto-Regular.woff2": "/static/media/Roboto-Regular.86a2beffef3e35f5c867.woff2",
+    "static/media/authorization.svg": "/static/media/authorization.7a0768f17f58fb8b1d27413639a3552d.svg",
+    "static/media/serconsmed.svg": "/static/media/serconsmed.f8fcfc627b6590de79302898e41d2743.svg",
+    "static/media/promashtest-ekologiya.svg": "/static/media/promashtest-ekologiya.c47616a6ac5a19c937d8bc9b11e98ada.svg",
+    "static/media/promashtest-metrologiya.svg": "/static/media/promashtest-metrologiya.5aae6ab3766efd50d7cfddba7d57c73e.svg",
+    "static/media/promashtest-ekspertiza.svg": "/static/media/promashtest-ekspertiza.2d6fd6f33dddd9a5c58ae54afec45da8.svg",
+    "static/media/serkons.svg": "/static/media/serkons.0a5f848d390171635be94115a971d7cf.svg",
+    "static/media/promashtest-regiony.svg": "/static/media/promashtest-regiony.13f7339ddf74dcdb70763415f798fcd3.svg",
+    "static/media/promashtest-indiya.svg": "/static/media/promashtest-indiya.0894e5798f81d46a39ece055b4e2aece.svg",
+    "static/media/ptm.svg": "/static/media/ptm.956c75443bd4ba1a03693bf727372568.svg",
+    "static/media/promashtest.svg": "/static/media/promashtest.b7f98a8dd47765224e6b2c050f19dda7.svg",
+    "static/media/logo.svg": "/static/media/logo.03b88e446d953d6cdce4127ef26dd865.svg",
+    "index.html": "/index.html",
+    "main.6562a430.css.map": "/static/css/main.6562a430.css.map",
+    "main.617d3187.js.map": "/static/js/main.617d3187.js.map",
+    "453.0739a952.chunk.js.map": "/static/js/453.0739a952.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6562a430.css",
+    "static/js/main.617d3187.js"
+  ]
+}
