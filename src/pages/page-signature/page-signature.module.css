@@ -1,5 +1,5 @@
 .signature {
-    padding: 62px 0;
+    padding: 32px 0;
 }
 
 .signature__widget {
@@ -117,4 +117,13 @@
 .label:hover .input {
     border: 1px solid #21212126;
     box-shadow: 0 4px 4px 0 #8e8dd01f;
+}
+
+.documentation {
+    background-color: #fff7c4;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: inline-flex;
+    margin: 32px 0 0 0;
+    padding: 8px 16px;
 }

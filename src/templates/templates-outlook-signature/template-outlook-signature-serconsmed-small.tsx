@@ -3,24 +3,20 @@ import { HeadCustom } from './components/HeadCustom';
 
 import { ISignatureProps } from "./../../utils/type";
 
-export function TemplateOutlookSignatureSercons({ inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress, avatarUrl }: ISignatureProps) {
+export function TemplateOutlookSignatureSerconsMedSmall({ inputName, inputFamily, inputPatronymic, inputPosition, inputTelephone, inputTelephoneExt, inputTelephoneSecond, inputAddress, avatarUrl }: ISignatureProps) {
   return (
     <>
       <Html lang="ru">
         <HeadCustom />
         <Section>
-          <Row align='left' width="800" style={{ width: "800px", maxWidth: "800px", backgroundColor: "#F1F1F1", color: "#000000", margin: "0" }}>
+          <Row align='left' width="660" style={{ width: "660px", maxWidth: "660px", backgroundColor: "#F1F1F1", color: "#000000", margin: "0" }}>
             <Column align='left' style={{ paddingTop: "12px", paddingBottom: "12px", }}>
               <Row>
-                <Column width="10" style={{ backgroundColor: "#C6152C" }}></Column>
+                <Column width="10" style={{ backgroundColor: "#00ABAB" }}></Column>
                 <Column style={{ backgroundColor: "#F1F1F1", width: "8px" }}></Column>
-                <Column style={{ backgroundColor: "#D0D0D0" }} width='560'>
+                <Column style={{ backgroundColor: "#D0D0D0" }} width='420'>
                   <Section>
                     <Row>
-                      <Column style={{ width: "28px" }}></Column>
-                      <Column width="134" style={{ borderCollapse: "collapse" }}>
-                        <Img src={avatarUrl} alt="avatar" width="134" height="134" />
-                      </Column>
                       <Column style={{ width: "28px" }}></Column>
                       <Column>
 
@@ -35,7 +31,7 @@ export function TemplateOutlookSignatureSercons({ inputName, inputFamily, inputP
                         {inputPosition && (
                           <Row>
                             <Column align='left' valign='middle' style={{ width: "100%" }}>
-                              <table role="presentation" style={{ backgroundColor: "#C6152C", fontSize: "14px", color: "#FFF", fontFamily: "'Arial', sans-serif" }}>
+                              <table role="presentation" style={{ backgroundColor: "#00ABAB", fontSize: "14px", color: "#FFF", fontFamily: "'Arial', sans-serif" }}>
                                 <tr>
                                   <td style={{ padding: "2px 4px" }}>
                                     {inputPosition}
@@ -95,28 +91,28 @@ export function TemplateOutlookSignatureSercons({ inputName, inputFamily, inputP
                     </Row>
                   </Section>
                 </Column>
-                <Column style={{ width: "32px" }}></Column>
-                <Column style={{ width: '150px' }} >
+                <Column style={{ width: "15px" }}></Column>
+                <Column style={{ width: '180px' }} >
                   <Row align='right'>
                     <Column align='right'>
-                      <Link href="https://www.serconsrus.ru/">
-                        <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/logo-sercons.png" alt="telephone" width="150" height="30" />
+                      <Link href="https://serconsmed.com/">
+                        <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/logo-serconsmed.png" alt="telephone" width="180" height="22" />
                       </Link>
                     </Column>
                   </Row>
                   <Row style={{ paddingTop: "70px" }}>
                     <Column align='right' >
-                      <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/link-icon-sercons.png" alt="telephone" width="20" height="24" />
+                      <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/link-icon-serconsmed.png" alt="telephone" width="20" height="24" />
                     </Column>
                   </Row>
                   <Row>
                     <Column align='right'>
-                      <Link href="https://www.serconsrus.ru/" style={{ color: "#444", fontSize: "14px", fontWeight: "700", textDecoration: "underline", fontFamily: "'Arial', sans-serif" }}>serconsrus.ru</Link>
+                      <Link href="https://serconsmed.com/" style={{ color: "#444", fontSize: "14px", fontWeight: "700", textDecoration: "underline", fontFamily: "'Arial', sans-serif" }}>serconsmed.com</Link>
                     </Column>
                   </Row>
                 </Column>
-                <Column style={{ width: "32px" }}></Column>
-                <Column width="10" style={{ backgroundColor: "#C6152C" }}></Column>
+                <Column style={{ width: "15px" }}></Column>
+                <Column width="10" style={{ backgroundColor: "#00ABAB" }}></Column>
               </Row>
             </Column>
           </Row >
@@ -126,4 +122,3 @@ export function TemplateOutlookSignatureSercons({ inputName, inputFamily, inputP
     </>
   );
 }
-

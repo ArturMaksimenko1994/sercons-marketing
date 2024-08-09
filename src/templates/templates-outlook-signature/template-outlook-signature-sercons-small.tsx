@@ -19,8 +19,8 @@ export function TemplateOutlookSignatureSerconsSmall({ inputName, inputFamily, i
                     <Row>
                       <Column style={{ width: "28px" }}></Column>
                       <Column>
-                        {/* ФИО */}
-                        <Row>
+                         {/* ФИО */}
+                         <Row>
                           <Column style={{ paddingBottom: "6px", paddingTop: "12px" }}>
                             <Text style={{ margin: "0", fontSize: "20px", color: "#000", fontWeight: "700", lineHeight: "20px", fontFamily: "'Arial', sans-serif" }}>{inputFamily} <br />{inputName} {inputPatronymic}</Text>
                           </Column>
@@ -41,11 +41,15 @@ export function TemplateOutlookSignatureSerconsSmall({ inputName, inputFamily, i
                           </Row>
                         )}
 
+                        <Row>
+                          <Column height="12" style={{ lineHeight: "12px" }}></Column>
+                        </Row>
+
                         {/* толефон */}
                         {inputTelephoneSecond && (
-                          <Row style={{ paddingTop: "10px", paddingBottom: "2px" }}>
+                          <Row style={{ paddingBottom: "2px" }}>
                             <Column style={{ width: "16px" }}>
-                              <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/icon-2.png" alt="telephone" width="16" height='16' />
+                              <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/icon-tell.png" alt="telephone" width="16" height='16' />
                             </Column>
                             <Column valign='middle' style={{ paddingLeft: "6px" }}>
                               <Link href={`tel:${inputTelephoneSecond}`} style={{ display: "inline-block", margin: "0", fontSize: "13px", color: "#000", fontFamily: "'Arial', sans-serif", lineHeight: "12px" }}>{inputTelephoneSecond} {inputTelephoneExt && `(доб. ${inputTelephoneExt})`}</Link >
@@ -57,7 +61,7 @@ export function TemplateOutlookSignatureSerconsSmall({ inputName, inputFamily, i
                         {inputTelephone && (
                           <Row>
                             <Column style={{ width: "16px" }}>
-                              <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/icon-3.png" alt="telephone" width="16" height='16' />
+                              <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/icon-mob.png" alt="telephone" width="16" height='16' />
                             </Column>
                             <Column valign='middle' style={{ paddingLeft: "6px" }}>
                               <Link href={`tel:${inputTelephone}`} style={{ display: "inline-block", margin: "0", fontSize: "13px", color: "#000", fontFamily: "'Arial', sans-serif", lineHeight: "12px" }}>{inputTelephone}</Link>
@@ -67,15 +71,19 @@ export function TemplateOutlookSignatureSerconsSmall({ inputName, inputFamily, i
 
                         {/* адрес */}
                         {inputAddress && (
-                          <Row style={{ paddingBottom: "12px" }}>
+                          <Row style={{ paddingTop: "2px" }}>
                             <Column style={{ width: "16px" }}>
-                              <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/icon-1.png" alt="telephone" width="16" height='16' />
+                              <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/icon-map.png" alt="telephone" width="16" height='16' />
                             </Column>
                             <Column valign='middle' style={{ paddingLeft: "6px" }}>
                               <Text style={{ display: "inline-block", margin: "0", fontSize: "13px", color: "#000", fontFamily: "'Arial', sans-serif", lineHeight: "12px" }}>{inputAddress}</Text>
                             </Column>
                           </Row>
                         )}
+
+                        <Row>
+                          <Column height="12" style={{ lineHeight: "12px" }}></Column>
+                        </Row>
 
                       </Column>
                       <Column style={{ width: "14px" }}></Column>
@@ -87,13 +95,13 @@ export function TemplateOutlookSignatureSerconsSmall({ inputName, inputFamily, i
                   <Row align='right'>
                     <Column align='right'>
                       <Link href="https://www.serconsrus.ru/">
-                        <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/07/signature-logo.png" alt="telephone" width="150" height="30" />
+                        <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/07/signature-logo.png" alt="telephone" width="150" height="28" />
                       </Link>
                     </Column>
                   </Row>
                   <Row style={{ paddingTop: "70px" }}>
                     <Column align='right' >
-                      <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/07/signature-link-icon.png" alt="telephone" width="20" height="24" />
+                      <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/link-icon-sercons.png" alt="telephone" width="20" height="24" />
                     </Column>
                   </Row>
                   <Row>
