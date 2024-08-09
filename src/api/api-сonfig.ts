@@ -1,1 +1,1 @@
-export const BASE_URL = "http://www.signature.custom-wp.ru";
+export const BASE_URL = "http://www.api.marketing.serconsrus.ru";

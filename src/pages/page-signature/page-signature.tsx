@@ -10,14 +10,14 @@ const PageSignature = () => {
   const [inputName, setInputName] = useState('Артур');
   const [inputFamily, setInputFamily] = useState('Максименко');
   const [inputPatronymic, setInputPatronymic] = useState('Сергеевич');
-  const [inputPosition, setInputPosition] = useState('программист');
+  const [inputPosition, setInputPosition] = useState('Прогаммист - PR');
   const [inputTelephone, setInputTelephone] = useState('8 (985) 917-99-89');
-  const [inputTelephoneExt, setInputTelephoneExt] = useState('4456');
-  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('12');
-  const [inputAddress, setInputAddress] = useState('Москва, Большой Строченовский переулок, 25А');
+  const [inputTelephoneExt, setInputTelephoneExt] = useState('3356');
+  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('6578866');
+  const [inputAddress, setInputAddress] = useState('г. Москва ул. Шабаловка 31г');
   const { imageUrl, setImageUrl } = useImage();
 
-  const defaultImageUrl = "http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/hM7eXLZbzmQ.jpg";
+  const defaultImageUrl = "https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/avatar-2.png";
   const avatarUrl = imageUrl || defaultImageUrl;
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -115,18 +115,17 @@ const PageSignature = () => {
                   <p className={styles.text}>Телефон</p>
                   <span className={styles.span}>
                     <i className={styles.icon}></i>
-                    <input
-                      className={styles.input}
+                    <input className={styles.input}
                       type="text"
                       placeholder="Телефон"
-                      value={inputTelephone}
-                      onChange={handleInpuTelephone}
+                      value={inputTelephoneSecond}
+                      onChange={handleInpuTelephoneSecond}
                     />
                   </span>
                 </label>
 
                 <label className={styles.label}>
-                  <p className={styles.text}>Телефон доб.</p>
+                  <p className={styles.text}>Доб.</p>
                   <span className={styles.span}>
                     <i className={styles.icon}></i>
                     <input
@@ -140,15 +139,15 @@ const PageSignature = () => {
                 </label>
 
                 <label className={styles.label}>
-                  <p className={styles.text}>Стационарыный телефона</p>
+                  <p className={styles.text}>Мобильный телефон</p>
                   <span className={styles.span}>
                     <i className={styles.icon}></i>
                     <input
                       className={styles.input}
                       type="text"
                       placeholder="Телефон"
-                      value={inputTelephoneSecond}
-                      onChange={handleInpuTelephoneSecond}
+                      value={inputTelephone}
+                      onChange={handleInpuTelephone}
                     />
                   </span>
                 </label>
@@ -196,6 +195,11 @@ const PageSignature = () => {
           inputAddress={inputAddress}
           avatarUrl={avatarUrl}
         />
+
+        <div className={styles.documentation}>
+          <code>C:\Users\%username%\AppData\Roaming\Microsoft\Signatures</code>
+        </div>
+
       </div>
     </section>
   )

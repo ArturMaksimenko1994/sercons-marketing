@@ -9,19 +9,19 @@ export function TemplateOutlookSignaturePromashtestSmall({ inputName, inputFamil
       <Html lang="ru">
         <HeadCustom />
         <Section>
-          <Row align='left' width="660" style={{ width: "660px", maxWidth: "660px", backgroundColor: "#F1F1F1", color: "#000000", margin: "0" }}>
+          <Row align='left' width="660" style={{ width: "660px", maxWidth: "660px", backgroundColor: "#F1F1F1", color: "#F1F1F1000", margin: "0" }}>
             <Column align='left' style={{ paddingTop: "12px", paddingBottom: "12px", }}>
               <Row>
                 <Column width="10" style={{ backgroundColor: "#ACACAC" }}></Column>
                 <Column style={{ backgroundColor: "#F1F1F1", width: "8px" }}></Column>
-                <Column style={{ backgroundColor: "#006490" }} width='560'>
+                <Column style={{ backgroundColor: "#006490" }} width='420'>
                   <Section>
                     <Row>
                       <Column style={{ width: "28px" }}></Column>
                       <Column>
 
-                        {/* ФИО */}
-                        <Row>
+                         {/* ФИО */}
+                         <Row>
                           <Column style={{ paddingBottom: "6px", paddingTop: "12px" }}>
                             <Text style={{ margin: "0", fontSize: "20px", color: "#F1F1F1", fontWeight: "700", lineHeight: "20px", fontFamily: "'Arial', sans-serif" }}>{inputFamily} <br />{inputName} {inputPatronymic}</Text>
                           </Column>
@@ -31,7 +31,7 @@ export function TemplateOutlookSignaturePromashtestSmall({ inputName, inputFamil
                         {inputPosition && (
                           <Row>
                             <Column align='left' valign='middle' style={{ width: "100%" }}>
-                              <table role="presentation" style={{ backgroundColor: "#444", fontSize: "14px", color: "#FFF", fontFamily: "'Arial', sans-serif" }}>
+                              <table role="presentation" style={{ backgroundColor: "#444444", fontSize: "14px", color: "#FFF", fontFamily: "'Arial', sans-serif" }}>
                                 <tr>
                                   <td style={{ padding: "2px 4px" }}>
                                     {inputPosition}
@@ -42,11 +42,15 @@ export function TemplateOutlookSignaturePromashtestSmall({ inputName, inputFamil
                           </Row>
                         )}
 
+                        <Row>
+                          <Column height="12" style={{ lineHeight: "12px" }}></Column>
+                        </Row>
+
                         {/* толефон */}
                         {inputTelephoneSecond && (
-                          <Row style={{ paddingTop: "10px", paddingBottom: "2px" }}>
+                          <Row style={{ paddingBottom: "2px" }}>
                             <Column style={{ width: "16px" }}>
-                              <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/icon-2.png" alt="telephone" width="16" height='16' />
+                              <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/icon-tell.png" alt="telephone" width="16" height='16' />
                             </Column>
                             <Column valign='middle' style={{ paddingLeft: "6px" }}>
                               <Link href={`tel:${inputTelephoneSecond}`} style={{ display: "inline-block", margin: "0", fontSize: "13px", color: "#F1F1F1", fontFamily: "'Arial', sans-serif", lineHeight: "12px" }}>{inputTelephoneSecond} {inputTelephoneExt && `(доб. ${inputTelephoneExt})`}</Link >
@@ -58,7 +62,7 @@ export function TemplateOutlookSignaturePromashtestSmall({ inputName, inputFamil
                         {inputTelephone && (
                           <Row>
                             <Column style={{ width: "16px" }}>
-                              <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/icon-3.png" alt="telephone" width="16" height='16' />
+                              <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/icon-mob.png" alt="telephone" width="16" height='16' />
                             </Column>
                             <Column valign='middle' style={{ paddingLeft: "6px" }}>
                               <Link href={`tel:${inputTelephone}`} style={{ display: "inline-block", margin: "0", fontSize: "13px", color: "#F1F1F1", fontFamily: "'Arial', sans-serif", lineHeight: "12px" }}>{inputTelephone}</Link>
@@ -68,15 +72,19 @@ export function TemplateOutlookSignaturePromashtestSmall({ inputName, inputFamil
 
                         {/* адрес */}
                         {inputAddress && (
-                          <Row style={{ paddingBottom: "12px" }}>
+                          <Row style={{ paddingTop: "2px" }}>
                             <Column style={{ width: "16px" }}>
-                              <Img src="http://www.signature.custom-wp.ru/wp-content/uploads/2024/08/icon-1.png" alt="telephone" width="16" height='16' />
+                              <Img src="https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/icon-map.png" alt="telephone" width="16" height='16' />
                             </Column>
                             <Column valign='middle' style={{ paddingLeft: "6px" }}>
                               <Text style={{ display: "inline-block", margin: "0", fontSize: "13px", color: "#F1F1F1", fontFamily: "'Arial', sans-serif", lineHeight: "12px" }}>{inputAddress}</Text>
                             </Column>
                           </Row>
                         )}
+
+                        <Row>
+                          <Column height="12" style={{ lineHeight: "12px" }}></Column>
+                        </Row>
 
                       </Column>
                       <Column style={{ width: "14px" }}></Column>
