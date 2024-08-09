@@ -7,14 +7,14 @@ import OutlookAvatar from "./../../components/outlook/outlook-avatar/outlook-ava
 import OutlookSignatureAll from '../../components/outlook/outlook-signature-all/outlook-signature-all';
 
 const PageSignature = () => {
-  const [inputName, setInputName] = useState('Артур');
-  const [inputFamily, setInputFamily] = useState('Максименко');
-  const [inputPatronymic, setInputPatronymic] = useState('Сергеевич');
-  const [inputPosition, setInputPosition] = useState('Прогаммист - PR');
-  const [inputTelephone, setInputTelephone] = useState('8 (985) 917-99-89');
-  const [inputTelephoneExt, setInputTelephoneExt] = useState('3356');
-  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('6578866');
-  const [inputAddress, setInputAddress] = useState('г. Москва ул. Шабаловка 31г');
+  const [inputName, setInputName] = useState('');
+  const [inputFamily, setInputFamily] = useState('');
+  const [inputPatronymic, setInputPatronymic] = useState('');
+  const [inputPosition, setInputPosition] = useState('');
+  const [inputTelephone, setInputTelephone] = useState('');
+  const [inputTelephoneExt, setInputTelephoneExt] = useState('');
+  const [inputTelephoneSecond, setInputTelephoneSecond] = useState('');
+  const [inputAddress, setInputAddress] = useState('');
   const { imageUrl, setImageUrl } = useImage();
 
   const defaultImageUrl = "https://api.marketing.serconsrus.ru/wp-content/uploads/2024/08/avatar-2.png";
